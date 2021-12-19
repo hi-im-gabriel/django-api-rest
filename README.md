@@ -32,6 +32,7 @@
 
 # Requirements
   - Docker
+  - docker-compose
   
 # Running server
 
