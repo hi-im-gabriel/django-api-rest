@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  django-api-rest:
+    build: ./api/
+    command: python ./manage.py runserver 0.0.0.0:8080
+    ports:
+      - 8080:8080
+    volumes:
+      - ./api/:/usr/app
+    depends_on:
+      - migration
+  migration:
+    build: ./api/
+    command: python ./manage.py migrate
+    volumes:
+    - ./api/:/usr/app
